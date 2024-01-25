@@ -33,18 +33,39 @@ namespace Sehmus.PresentationLayer.Areas.Admin.Controllers
         // POST: PortfolioController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Portfolio portfolio, IFormFile? ImageUrl)
+        public ActionResult Create(Portfolio portfolio, IFormFile? ImageUrl1, IFormFile? ImageUrl2, IFormFile? ImageUrl3, IFormFile? ImageUrl4)
         {
             try
             {
                 if (!ModelState.IsValid)
                 {
-                    if (ImageUrl is not null)
+                    if (ImageUrl1 is not null)
                     {
-                        string klasor1 = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + ImageUrl.FileName;
+                        string klasor1 = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + ImageUrl1.FileName;
                         using var stream1 = new FileStream(klasor1, FileMode.Create);
-                        ImageUrl.CopyTo(stream1);
-                        portfolio.ImageUrl = ImageUrl.FileName;
+                        ImageUrl1.CopyTo(stream1);
+                        portfolio.ImageUrl1 = ImageUrl1.FileName;
+                    }
+                    if (ImageUrl2 is not null)
+                    {
+                        string klasor2 = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + ImageUrl2.FileName;
+                        using var stream2 = new FileStream(klasor2, FileMode.Create);
+                        ImageUrl2.CopyTo(stream2);
+                        portfolio.ImageUrl2 = ImageUrl2.FileName;
+                    }
+                    if (ImageUrl3 is not null)
+                    {
+                        string klasor3 = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + ImageUrl3.FileName;
+                        using var stream3 = new FileStream(klasor3, FileMode.Create);
+                        ImageUrl3.CopyTo(stream3);
+                        portfolio.ImageUrl3 = ImageUrl3.FileName;
+                    }
+                    if (ImageUrl4 is not null)
+                    {
+                        string klasor4 = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + ImageUrl4.FileName;
+                        using var stream4 = new FileStream(klasor4, FileMode.Create);
+                        ImageUrl4.CopyTo(stream4);
+                        portfolio.ImageUrl4 = ImageUrl4.FileName;
                     }
                     _portfolioService.Add(portfolio);
                 }
@@ -66,20 +87,41 @@ namespace Sehmus.PresentationLayer.Areas.Admin.Controllers
         // POST: PortfolioController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, Portfolio portfolio, IFormFile? ImageUrl)
+        public ActionResult Edit(int id, Portfolio portfolio, IFormFile? ImageUrl1, IFormFile? ImageUrl2, IFormFile? ImageUrl3, IFormFile? ImageUrl4)
         {
             try
             {
                 if (!ModelState.IsValid)
-                {
-                    if (ImageUrl is not null)
-                    {
-                        string klasor1 = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + ImageUrl.FileName;
-                        using var stream1 = new FileStream(klasor1, FileMode.Create);
-                        ImageUrl.CopyTo(stream1);
-                        portfolio.ImageUrl = ImageUrl.FileName;
-                    }
-                    _portfolioService.Update(portfolio);
+                {    
+                        if (ImageUrl1 is not null)
+                        {
+                            string klasor1 = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + ImageUrl1.FileName;
+                            using var stream1 = new FileStream(klasor1, FileMode.Create);
+                            ImageUrl1.CopyTo(stream1);
+                            portfolio.ImageUrl1 = ImageUrl1.FileName;
+                        }
+                        if (ImageUrl2 is not null)
+                        {
+                            string klasor2 = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + ImageUrl2.FileName;
+                            using var stream2 = new FileStream(klasor2, FileMode.Create);
+                            ImageUrl2.CopyTo(stream2);
+                            portfolio.ImageUrl2 = ImageUrl2.FileName;
+                        }
+                        if (ImageUrl3 is not null)
+                        {
+                            string klasor3 = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + ImageUrl3.FileName;
+                            using var stream3 = new FileStream(klasor3, FileMode.Create);
+                            ImageUrl3.CopyTo(stream3);
+                            portfolio.ImageUrl3 = ImageUrl3.FileName;
+                        }
+                        if (ImageUrl4 is not null)
+                        {
+                            string klasor4 = Directory.GetCurrentDirectory() + "/wwwroot/Img/" + ImageUrl4.FileName;
+                            using var stream4 = new FileStream(klasor4, FileMode.Create);
+                            ImageUrl4.CopyTo(stream4);
+                            portfolio.ImageUrl4 = ImageUrl4.FileName;
+                        }
+                        _portfolioService.Update(portfolio);
                 }
                 return RedirectToAction(nameof(Index));
             }

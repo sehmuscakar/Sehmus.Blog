@@ -27,6 +27,11 @@ namespace Sehmus.EntitiesLayer.Dtos.AdminDtos
         [Display(Name = "Müşteri")]
         [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
         public string Client { get; set; }
+
+        [Display(Name = "Kullanılan Teknolojiler")]
+        [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
+        public string TechnologiesUsed { get; set; }
+
         [Display(Name = "Proje Url Yolu")]
         [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
         public string ProjectUrl { get; set; }

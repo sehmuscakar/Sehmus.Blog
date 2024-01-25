@@ -4,9 +4,18 @@ namespace Sehmus.EntitiesLayer.Concrete
 {
     public class Portfolio:BaseEntity
     {
-        [Display(Name = "Resim")]
+        [Display(Name = "Resim1")]
         [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
-        public string ImageUrl { get; set; }
+        public string ImageUrl1 { get; set; }
+        [Display(Name = "Resim2")]
+        [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
+        public string ImageUrl2 { get; set; }
+        [Display(Name = "Resim3")]
+        [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
+        public string ImageUrl3 { get; set; }
+        [Display(Name = "Resim4")]
+        [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
+        public string ImageUrl4 { get; set; }
         [Display(Name = "Kategori")]
         [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
         public string Category { get; set; }

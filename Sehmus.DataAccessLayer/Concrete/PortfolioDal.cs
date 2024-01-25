@@ -27,6 +27,7 @@ namespace Sehmus.DataAccessLayer.Concrete
                 ImageUrl4= portfolio.ImageUrl4,
                 Category= portfolio.Category,
                 Client= portfolio.Client,
+                TechnologiesUsed= portfolio.TechnologiesUsed,
                 ProjectUrl= portfolio.ProjectUrl,
                 Description= portfolio.Description,
                 LastUpdatedAt = portfolio.LastUpdatedAt,

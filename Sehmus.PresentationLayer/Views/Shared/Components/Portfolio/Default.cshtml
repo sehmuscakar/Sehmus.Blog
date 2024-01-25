@@ -14,6 +14,12 @@
         .work-content {
             flex: 1;
         }
+
+        .detail-link-text {
+            font-size: 14px;
+            color: #ff0000; /* istediğiniz renk */
+            margin-top: 5px; /* gerektiğinde ayarlayabilirsiniz */
+        }
     </style>
 
     <div class="container">
@@ -37,7 +43,10 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="w-like">
-                                        <a href="/Home/Portfolio/@item.Id"><span class="bi bi-plus-circle"></span></a>
+                                        <a href="/Home/Portfolio/@item.Id">
+                                            <span class="bi bi-plus-circle"></span>
+                                            <p class="detail-link-text">Detaya Git</p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

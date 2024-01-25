@@ -9,9 +9,18 @@ namespace Sehmus.EntitiesLayer.Dtos.AdminDtos
 {
     public class PortfolioListDto:AdminBaseDto
     {
-        [Display(Name = "Resim")]
+        [Display(Name = "Resim1")]
         [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
-        public string ImageUrl { get; set; }
+        public string ImageUrl1 { get; set; }
+        [Display(Name = "Resim2")]
+        [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
+        public string ImageUrl2 { get; set; }
+        [Display(Name = "Resim3")]
+        [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
+        public string ImageUrl3 { get; set; }
+        [Display(Name = "Resim4")]
+        [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
+        public string ImageUrl4 { get; set; }
         [Display(Name = "Kategori")]
         [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
         public string Category { get; set; }
@@ -19,7 +28,6 @@ namespace Sehmus.EntitiesLayer.Dtos.AdminDtos
         [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
         public string Client { get; set; }
         [Display(Name = "Proje Url Yolu")]
-        [Url]
         [Required(ErrorMessage = "{0} alanı boş geçilemez.")]
         public string ProjectUrl { get; set; }
         [Display(Name = "Açıklama")]

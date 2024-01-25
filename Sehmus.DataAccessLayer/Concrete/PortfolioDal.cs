@@ -21,14 +21,16 @@ namespace Sehmus.DataAccessLayer.Concrete
             var a = Context.Portfolios.Select(portfolio => new PortfolioListDto()
             {
                 Id = portfolio.Id,
-                ImageUrl= portfolio.ImageUrl,
+                ImageUrl1= portfolio.ImageUrl1,
+                ImageUrl2= portfolio.ImageUrl2,
+                ImageUrl3= portfolio.ImageUrl3,
+                ImageUrl4= portfolio.ImageUrl4,
                 Category= portfolio.Category,
                 Client= portfolio.Client,
                 ProjectUrl= portfolio.ProjectUrl,
                 Description= portfolio.Description,
                 LastUpdatedAt = portfolio.LastUpdatedAt,
                 CreatedFullName = portfolio.AppUser.Name,
-
             });
             return a.ToList();
         }
